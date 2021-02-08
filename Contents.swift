@@ -1,5 +1,65 @@
 import UIKit
 
+// Arrays Practice
+//
+// Code the following challenges in a Swift Playground.
+
+
+// 1. Define an array called  `suitcase`. It should store Strings. Imagine you are going on a trip and you need to put things in your suitcase. Use the append method to add the things you are going to take. You can only append one item at a time. Add at least 4 things to the suitcase.
+
+
+// 2. Print the array `suitcase` to the console.
+
+
+// 3. Using `suitcase`, print the item at index 3 to the console.
+var suitcase: [String] = []
+suitcase.append("Toothpaste")
+suitcase.append("Toothbrush")
+suitcase.append("Razor")
+suitcase.append("Shaving Cream")
+suitcase.append("T-Shirts")
+suitcase.append("Jeans")
+suitcase.append("Socks")
+suitcase.append("Underwear")
+
+
+print(suitcase)
+print(suitcase[2])
+print(suitcase[3],suitcase[4],suitcase[5])
+
+// 4. Given `var fruit = ["🍐", "🐍", "🍏", "🐶", "🍐", "🍋", "🍓"]` Remove the animals from the array of fruits.
+
+var fruit = ["🍐", "🐍", "🍏", "🐶", "🍐", "🍋", "🍓"]
+
+fruit.remove(at:1)
+fruit.remove(at:2)
+
+print(fruit)
+
+// 5. Given the following array, insert **Apr** before **May**?
+
+
+ var months = ["Jan", "Feb", "Mar", "May"]
+ months.insert("Apr", at: 3)
+ print(months)
+
+// 6. Write a function that takes an Array of String as an input and returns a String. The returned String should be all of the items in the input String with a space between each.
+
+// For example:
+
+
+var str = ["Swift", "isn't","really", "that","hard!"]
+let joined = str.joined(separator: " ")
+
+print(joined)
+
+
+// Call your function with an array of at least 5 words and print the results to the console.
+
+// Snaps if you don't have a space at the end! 😎
+
+---------------------------
+
 // Problems
 // 1. You can iterate over the key-value pairs in a dictionary with a for-in loop. Each item in the dictionary is returned as a (key, value) tuple. Print all the values from `colorHex`.
 
@@ -114,8 +174,7 @@ print(check_first_last([1]))
 
 // 7. Write a function to compute the sum of all the elements of a given array of integers.
 
-func sum_of(_ arra: [Int]) -> Int {
-    return arra.reduce(0, +)
+func sum_of(_ arra: [Int]) -> Int {    return arra.reduce(0, +)
 }
 print(sum_of([1, 2, 3, 4]))
 print(sum_of([11, 22, 35, 4]))
@@ -129,7 +188,28 @@ print(nums)
 // 9. Write a function that accepts a String as its only parameter, and returns true if the string has
 // only unique letters.
 
-// 10. Write a function that accepts a String and a character and returns how many times that specific character appears in the string.
-// 11.  Given a Grid with the following numbers.
+func strings_only(input: String) -> Bool {
+    var usedLetters = [Character]()
+    for letter in input {
+ if usedLetters.contains(letter) {
+ return false
+ }
+ usedLetters.append(letter)
+ }
+ return true
+}
+print(strings_only(input: "AbBa"))
 
-// Write a function that adds up the elements in the even rows only, like this:
+// 10. Write a function that accepts a String and a character and returns how many times that specific character appears in the string.
+
+func countingCharacters(input: String, count: Character) -> Int {
+    var letterCount = 0
+    for letter in input {
+        if letter == count {
+            letterCount += 1
+ }
+ }
+ return letterCount
+}
+print(countingCharacters(input:"Mississippi", count:"s"))
+
